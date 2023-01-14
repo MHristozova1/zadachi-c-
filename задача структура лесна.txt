@@ -1,0 +1,84 @@
+#include<iostream>
+#include<string.h>
+#include<iomanip>
+using namespace std;
+int br,i,i1;
+struct uchenik
+{
+char ime[30];
+int nomer;
+double uspeh;
+char predmet[20];
+double ocenka;
+}x,a;
+
+void vhod(uchenik &a)
+{
+	 cout<<"vavedi ime ";
+	 cin>>a.ime;
+	 cout<<"vavedi nomer ";
+	 cin>>a.nomer;
+	 cout<<"vavedi uspeh ";
+	 cin>>a.uspeh;
+	 cout<<"vavedi predmet ";
+	 cin>>a.predmet;
+	 cout<<"vavedi ocenka ";
+	 cin>>a.ocenka;
+	 cout<<endl;
+}
+
+void izhod(uchenik a)
+{
+	 cout<<setw(5)<<"Ime";
+	 cout<<setw(17)<<"Nomer";
+	 cout<<setw(17)<<"uspeh";
+	 cout<<setw(17)<<"predmet";
+	 cout<<setw(17)<<"Ocenka"<<'\n';
+	 cout<<setw(5)<<a.ime;
+	 cout<<setw(17)<<a.nomer;
+	 cout<<setw(17)<<a.uspeh;
+	 cout<<setw(17)<<a.predmet;
+	 cout<<setw(17)<<a.ocenka<<'\n';
+	 cout<<endl;
+}
+
+void nomer(uchenik a[27])
+{//int i;
+for(i=0;i<br-1;i++)
+{for(i1=0;i1<br-1-i;i1++)
+{
+if(a[i1].nomer>a[i1+1].nomer)
+  {
+   x=a[i1];
+  a[i1]=a[i1+1];
+  a[i1+1]=x;
+}}}
+for(i=0;i<br;i++)
+{
+cout<<a[i].ime;
+cout<<a[i].nomer;
+cout<<a[i].uspeh;
+cout<<a[i].predmet;
+cout<<a[i].ocenka;
+cout<<endl;
+}}
+
+int main()
+{
+uchenik a[27];
+
+cout<<"vavedi broi uchenici ";
+cin>>br;
+cout<<endl;
+for (int i=0; i<br; i++)
+	{
+	cout<<"Vhod: "<<'\n';
+	vhod (a[i]);
+	cout<<"Izhod: "<<'\n';
+	izhod(a[i]);
+	cout<<"Sortirvane po nomera: "<<'\n';
+	nomer(a);
+
+system("pause 0");
+return 0;
+}

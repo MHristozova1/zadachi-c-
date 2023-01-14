@@ -1,0 +1,61 @@
+#include<iostream>
+#include<string.h>
+using namespace std;
+struct apteka
+{
+char ime[16];
+char dozirovka[4];
+char efekt[3];
+int kol;
+double cena;
+public:
+void vhod();
+void izhod();
+};
+void apteka::vhod()
+
+{
+cout<<"ime->";
+cin>>ime;
+cout<<"dozirovka->";
+cin>>dozirovka;
+cout<<"efekt->";
+cin>>efekt;
+cout<<"kol->";
+cin>>kol;
+cout<<"cena->";
+cin>>cena;
+}
+void apteka:: izhod()
+{
+cout<<"ime"<<ime<<endl;
+cout<<"dozirovka"<<dozirovka<<endl;
+cout<<"efekt"<<efekt<<endl;
+cout<<"kol"<<kol<<endl;
+cout<<"cena"<<cena<<endl;
+}
+
+int main()
+{
+apteka a[13];
+int n,i;
+cout<<"n=";
+cin>>n;
+for(i=0;i<n;i++)
+	a[i].vhod();
+for(i=0;i<n;i++)
+	a[i].izhod();
+
+system("pause 0");
+return 0;
+}
+
+
+
+
+
+
+
+
+
+
