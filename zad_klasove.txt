@@ -1,0 +1,85 @@
+#include<iostream.h>
+#include<string.h>
+class apteka
+{
+char ime[16];
+char dozirovka[4];
+char efekt[3];
+int kol;
+double cena;
+public:
+void vhod()
+{
+cout<<"ime->";
+cin>>ime;
+cout<<"dozirovka->";
+cin>>dozirovka;
+cout<<"efekt->";
+cin>>efekt;
+cout<<"kol->";
+cin>>kol;
+cout<<"cena->";
+cin>>cena;
+}
+void izhod()
+{
+cout<<"ime"<<ime<<endl;
+cout<<"dozirovka"<<dozirovka<<endl;
+cout<<"efekt"<<efekt<<endl;
+cout<<"kol"<<kol<<endl;
+cout<<"cena"<<cena<<endl;
+}
+void izhod1();
+friend void spisak(int,apteka []);
+};
+void apteka::izhod1()
+{
+double st;
+st=kol*cena;
+if(st<cena)
+{
+cout<<"ime"<<ime<<endl;
+cout<<"dozirovka"<<dozirovka<<endl;
+cout<<"efekt"<<efekt<<endl;
+cout<<"kol"<<kol<<endl;
+cout<<"cena"<<cena<<endl;
+}
+}
+void spisak(int n,apteka m[])
+{
+double sr, sum=0;
+for(int j=0;j<n;j++)
+if(m[j].efekt=="da")
+{
+char s[12]="svetovarteg";
+for(int i=0;i<n;i++)
+if(strncmp(m[i].ime,s,11)==0)
+{
+m[i].izhod();
+sum=sum+m[i].cena;
+}
+sr=sum/n;
+cout<<"sr="<<sr<<endl;
+}
+}
+int main()
+{
+apteka a[13];
+int n,i;
+cout<<"n=";
+cin>>n;
+for(i=0;i<n;i++) a[i].vhod();
+for(i=0;i<n;i++) a[i].izhod1();
+spisak(n,a);
+return 0;
+}
+
+
+
+
+
+
+
+
+
+
